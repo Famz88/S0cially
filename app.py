@@ -4,7 +4,7 @@ from werkzeug.exceptions import abort
 
 
 def get_db_connection():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('postgres://ypybmhdlaukiau:0fe012b64fa167724ecf880e3331fe9350495d52b53ad1ea3ea3073f965fce8a@ec2-54-147-36-107.compute-1.amazonaws.com:5432/d8a1gasa395fbh')
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -122,4 +122,4 @@ def learning():
     return render_template('learning.html')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run()
