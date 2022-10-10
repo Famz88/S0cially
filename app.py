@@ -22,10 +22,6 @@ def get_post(post_id):
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
-
-
 @app.route('/')
 def index():
     conn = get_db_connection()
@@ -124,3 +120,6 @@ def games():
 @app.route('/learning')
 def learning():
     return render_template('learning.html')
+
+if __name__ == '__main__':
+    app.run()
